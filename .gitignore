@@ -1,0 +1,89 @@
+# Dependencies
+node_modules/
+consumer_product_filter_frontend/node_modules/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual Environment
+venv/
+env/
+ENV/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Build outputs
+dist/
+build/
+*.tgz
+*.tar.gz
+
+# Cache
+.cache/
+.parcel-cache/
+.next/
+.nuxt/
+.vite/
+
+# Temporary files
+tmp/
+temp/
+
+# API Keys (security)
+**/config/keys.js
+**/config/prod_keys.js
+
+# Package manager locks (optional)
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Debug logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*

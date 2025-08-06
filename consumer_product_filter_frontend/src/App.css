@@ -1,0 +1,340 @@
+/* HealthyLife AI - Modern Clean Design */
+
+/* Genel Reset ve Temel Stiller */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  line-height: 1.6;
+  color: #1f2937;
+  background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 50%, #f0fdfa 100%);
+  min-height: 100vh;
+}
+
+/* Container Stilleri */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Header Stilleri */
+.header-section {
+  text-align: center;
+  margin-bottom: 3rem;
+  padding: 2rem 0;
+}
+
+.main-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #059669, #0ea5e9);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 1rem;
+  letter-spacing: -0.02em;
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  color: #64748b;
+  max-width: 600px;
+  margin: 0 auto;
+  font-weight: 400;
+}
+
+/* Grid Layout */
+.main-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 1024px) {
+  .main-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+/* Card Stilleri */
+.card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 1rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  padding: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.card-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Upload Area */
+.upload-area {
+  border: 2px dashed #10b981;
+  border-radius: 0.75rem;
+  padding: 2rem;
+  text-align: center;
+  background: linear-gradient(135deg, #f0fdfa, #ecfdf5);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.upload-area:hover {
+  border-color: #059669;
+  background: linear-gradient(135deg, #ecfdf5, #d1fae5);
+}
+
+.upload-icon {
+  width: 4rem;
+  height: 4rem;
+  margin: 0 auto 1rem;
+  color: #10b981;
+}
+
+.upload-text {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 0.5rem;
+}
+
+.upload-subtext {
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+/* Image Preview */
+.image-preview {
+  margin-top: 1.5rem;
+}
+
+.preview-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.preview-image {
+  width: 100%;
+  height: 16rem;
+  object-fit: cover;
+  border-radius: 0.5rem;
+  border: 1px solid #e5e7eb;
+}
+
+/* Button Stilleri */
+.analyze-button {
+  width: 100%;
+  margin-top: 1.5rem;
+  padding: 1rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  font-size: 1.125rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.analyze-button:enabled {
+  background: linear-gradient(135deg, #10b981, #0ea5e9);
+  color: white;
+}
+
+.analyze-button:enabled:hover {
+  background: linear-gradient(135deg, #059669, #0284c7);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.4);
+}
+
+.analyze-button:disabled {
+  background: #f3f4f6;
+  color: #9ca3af;
+  cursor: not-allowed;
+}
+
+/* Loading Animation */
+.spinner {
+  animation: spin 1s linear infinite;
+  border-radius: 50%;
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 2px solid transparent;
+  border-top: 2px solid currentColor;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Error Stilleri */
+.error-message {
+  background: linear-gradient(135deg, #fef2f2, #fee2e2);
+  border: 1px solid #fca5a5;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.error-icon {
+  color: #ef4444;
+  font-size: 1.25rem;
+}
+
+.error-text {
+  color: #dc2626;
+  font-weight: 500;
+}
+
+/* Results Section */
+.results-section > * + * {
+  margin-top: 1.5rem;
+}
+
+.analysis-result {
+  background: linear-gradient(135deg, #f8fafc, #f1f5f9);
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+}
+
+.analysis-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.analysis-content {
+  background: white;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  border-left: 4px solid #0ea5e9;
+}
+
+.analysis-text {
+  color: #374151;
+  line-height: 1.7;
+  white-space: pre-wrap;
+}
+
+/* Confidence Score */
+.confidence-score {
+  background: linear-gradient(135deg, #faf5ff, #f3e8ff);
+  border-radius: 0.5rem;
+  padding: 1rem;
+  margin-top: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.confidence-label {
+  color: #7c3aed;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.confidence-value {
+  color: #6b21a8;
+  font-weight: 700;
+  font-size: 1.125rem;
+}
+
+/* Empty State */
+.empty-state {
+  text-align: center;
+  padding: 3rem 1rem;
+}
+
+.empty-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+.empty-title {
+  color: #6b7280;
+  font-size: 1.125rem;
+  margin-bottom: 0.5rem;
+}
+
+.empty-subtitle {
+  color: #9ca3af;
+  font-size: 0.875rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .main-title {
+    font-size: 2.5rem;
+  }
+  
+  .subtitle {
+    font-size: 1rem;
+  }
+  
+  .container {
+    padding: 0 0.75rem;
+  }
+  
+  .card {
+    padding: 1rem;
+  }
+  
+  .upload-area {
+    padding: 1.5rem;
+  }
+}
+
+/* Focus States for Accessibility */
+input[type="file"]:focus + label {
+  outline: 2px solid #0ea5e9;
+  outline-offset: 2px;
+}
+
+.analyze-button:focus {
+  outline: 2px solid #0ea5e9;
+  outline-offset: 2px;
+}
+
+/* Smooth Transitions */
+* {
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+}
